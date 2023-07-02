@@ -33,10 +33,12 @@ function destroy() {
 
 function createBoxes(amount) {
   let size = 30;
+  const boxArr = [];
   for (let i = 0; i < amount; i += 1) {
     size += 10;
     const box = `<div style = "width: ${size}px; height: ${size}px; background-color: ${getRandomHexColor()}; margin-top: 10px"></div>`
-    boxesList.insertAdjacentHTML('beforeend', box);
+    boxArr.push(box);
   }
+  boxesList.insertAdjacentHTML('beforeend', boxArr.join(''));
 }
 
